@@ -1,0 +1,36 @@
+start{
+    feed: [
+        "input"=>DICOM2NIFTI("input")
+        ],
+    x: 0,
+    y: 50
+}
+
+end E
+{
+    x: 100,
+    y: 50
+}
+
+analysis DICOM2NIFTI
+{
+    type: "qmenta_dicom2nifti:1.8",
+    qa: False,
+    output: [
+        RECONALL("input_data")
+    ],
+    x: 33,
+    y: 50
+}
+
+analysis RECONALL
+{
+    type: "myuser_recon_all_clinical:1.0",
+    qa: False,
+     output: [
+        E
+    ],
+    x : 66,
+    y : 50,
+    parent_output: True
+}

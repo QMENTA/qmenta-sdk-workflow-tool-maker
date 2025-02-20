@@ -1,0 +1,16 @@
+[
+  {
+    "id": "input_data",
+    "type": "container",
+    "file_filter": "c_t1[1,1](m'T1')",
+    "title": "Title of the setting",
+    "info": "Required inputs:<br><b>&bull; T1</b>: anatomical 3D image<br>&ensp;Must be labeled as 'T1' modality.<br><b>&bull;",
+    "in_filter": [
+      "mri_brain_data"
+    ],
+    "out_filter": [],
+    "anchor": 1,
+    "batch": 1,
+    "mandatory": 1
+  }
+]
