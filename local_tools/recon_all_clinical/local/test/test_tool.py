@@ -26,7 +26,7 @@ class TestTool(unittest.TestCase):
                     "files": [
                         # Relative paths to the input data stored in the sample_data folder
                         TestFileInput(
-                            path="T1_low.nii.gz",
+                            path="T1.nii.gz",
                             file_filter_condition_name="c_t1",
                             modality=Modality.T1,
                             mandatory=1

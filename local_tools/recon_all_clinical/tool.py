@@ -63,10 +63,12 @@ class ReconAllClinical(Tool):
         t1_input = self.inputs.input_data.c_t1[0].file_path
 
         subject_dir = os.path.join(os.environ["WORKDIR"], "FS_OUTPUT")
-
-        crop = f"recon-all-clinical.sh {t1_input} SUBJECT {subject_dir}"
+        os.makedirs(subject_dir, exist_ok=True)
+        crop = f"export SUBJECTS_DIR='{subject_dir}'"
         print(crop)
         os.system(crop)
+        crop = f"recon-all-clinical.sh {t1_input} sub-01 1 {subject_dir}"
+        print(crop)
         subprocess.call(shlex.split(crop))
 
         fs = os.path.join(subject_dir, "FREESURFER")
