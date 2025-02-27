@@ -3,7 +3,7 @@
   "sample_data_folder": "sample_data",
   "input_data": [
     {
-      "path": "T1_low.nii.gz",
+      "path": "T1.nii.gz",
       "modality": "T1",
       "file_filter_condition_name": "c_t1"
     }

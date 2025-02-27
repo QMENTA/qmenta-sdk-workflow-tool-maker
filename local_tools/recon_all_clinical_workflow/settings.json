@@ -1,6 +1,6 @@
 [
   {
-    "id": "input_data",
+    "id": "input",
     "type": "container",
     "file_filter": "c_t1[1,1](m'T1')",
     "title": "Title of the setting",
