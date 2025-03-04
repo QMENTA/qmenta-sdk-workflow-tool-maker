@@ -1,6 +1,6 @@
 FROM freesurfer/freesurfer:7.4.1
 
-ENV WORKDIR "/qmenta/"
+ENV WORKDIR "/root/"
 
 RUN apt-get update
 RUN apt-get install -y python3-pip python-dev build-essential
