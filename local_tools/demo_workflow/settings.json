@@ -1,0 +1,17 @@
+[
+  {
+    "type": "container",
+    "id": "input",
+    "title": "Input of DEMO workflow",
+    "file_filter": "(c_t1[1,1](m'T1') OR c_t2[1,1](m'T2'))",
+    "in_filter": [
+      "mri_brain_data"
+    ],
+    "out_filter": [
+    ],
+    "anchor": 1,
+    "mandatory": 1,
+    "batch": 1,
+    "section": "data"
+   }
+]

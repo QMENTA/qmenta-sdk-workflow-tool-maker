@@ -1,0 +1,76 @@
+start {
+     feed : [
+            	 "input"  =>  DICOM2NIFTI("input")
+            ],
+     x:0,
+     y:50
+}
+
+end E {
+     x : 100,
+     y : 50
+}
+
+analysis DICOM2NIFTI {
+        type: "qmenta_dicom2nifti:1.7",
+        qa : False,
+        output : [ TOOL_1("input")],
+        x : 20,
+        y : 50
+}
+
+analysis TOOL_1 {
+        type: "qmenta_bypass_box:1.1",
+        qa : False,
+        output : [
+                TOOL_2("input"),
+                TOOL_3("input")
+        ],
+        x : 40,
+        y : 50,
+        settings: {
+                apply_transform: parent("apply_transform")
+        }
+}
+
+analysis TOOL_2 {
+        type: "qmenta_bypass_box:1.1",
+        qa : False,
+        output : [
+              TOOL_4("input_1")
+        ],
+        x : 60,
+        y : 25,
+        settings: {
+                apply_transform: parent("apply_transform")
+        }
+}
+
+analysis TOOL_3 {
+        type: "qmenta_bypass_box:1.1",
+        qa : False,
+        output : [
+                TOOL_4("input_0")
+        ],
+        x : 60,
+        y : 75,
+        settings: {
+                apply_transform: parent("apply_transform")
+        }
+}
+
+analysis TOOL_4 {
+        type: "qmenta_combine_containers:1.4",
+        qa : False,
+        output : [
+                E
+        ],
+        x : 80,
+        y : 50,
+        parent_output: True,
+        settings: {
+                apply_transform: parent("apply_transform")
+        }
+}
+
+
